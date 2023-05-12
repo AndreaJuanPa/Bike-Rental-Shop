@@ -18,7 +18,7 @@ class Bike:
 
         print("Rented hourly type")
         self.total_income += number * 5 * time
-        self.inventory["hourly bikes"] -= number
+        self.inventory["hourly"] -= number
 
     def daily_type(self, number, time):
         if number <= 0:
@@ -30,7 +30,7 @@ class Bike:
             return
 
         print("Rented daily type")
-        self.inventory["daily_bikes"] -= number
+        self.inventory["daily"] -= number
         self.total_income += number * 20 * time
 
     def weekly_type(self,number, time):
@@ -43,7 +43,7 @@ class Bike:
             return
 
         print("Rented weekly type")
-        self.inventory["weekly_bikes"] -= number
+        self.inventory["weekly"] -= number
         self.total_income += number * 60 * time
 
     def rent_Bike(self):
