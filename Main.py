@@ -1,4 +1,4 @@
-class Bike:
+class Bike():
     def __init__(self,inventory):
         self.inventory = inventory
         self.total_income = 0
@@ -52,10 +52,12 @@ class Bike:
         rent_type= input("What type of rental would you like? (hourly,daily or weekly): ")
         self.rent_type = rent_type
         self.bikes = bikes
-        return self.bikes
+        return
 
     def return_bike(self,rent_type,time,num_bikes):
         bill = 0
+        num_bikes=int(input("How many bikes do you want to return?"))
+        time= int(input("How many hours, days or weeks did you rent the bikes? "))
 
         if rent_type =="hourly":
             bill = time * 5 * num_bikes
@@ -75,37 +77,40 @@ class Bike:
         return bill
 
 #Creating Objects:
-hourly_bikes = Bike (200)
-daily_bikes = Bike (100)
-weekly_bikes = Bike (70)
+hourly = Bike (200)
+daily = Bike (100)
+weekly = Bike (70)
 
 # Main Program
 while True:
-        print("Bike Rental Shop")
-        print("1. Display available bikes")
-        print("2. Rent a bike")
-        print("3. Return a bike")
-        print("4. Display shop revenue")
-        print("5. Exit")
+    shop = Bike()
+    print("Bike Rental Shop")
+    print("1. Display available bikes")
+    print("2. Rent a bike")
+    print("3. Return a bike")
+    print("4. Display shop revenue")
+    print("5. Exit")
 
 
-        choice = input("Enter your choice(1 to 5): ")
+    choice = input("Enter your choice(1 to 5): ")
 
-        if choice == 1:
+    if choice == 1:
             hourly_bikes.show_inventory()
             daily_bikes.show_inventory()
             weekly_bikes.show_inventory()
 
-        elif choice == 2:
+    elif choice == 2:
+            shop.rent_bike()
 
-        elif choice == 3:
+    elif choice == 3:
+            shop.return_bike()
 
-        elif choice == 4:
-
-        elif choice == 5:
+    elif choice == 4:
+            shop.total_income()
+    elif choice == 5:
            break
 
-        print("Thank you for using our service!")
+    print("Thank you for using our service!")
 
 
 
