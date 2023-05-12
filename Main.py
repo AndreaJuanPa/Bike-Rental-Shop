@@ -49,6 +49,8 @@ class Bike:
     def rent_Bike(self):
 
         bikes = int(input("How many bikes would you like to rent?"))
+        rent_type= input("What type of rental would you like? (hourly,daily or weekly): ")
+        self.rent_type = rent_type
         self.bikes = bikes
         return self.bikes
 
