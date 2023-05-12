@@ -95,9 +95,9 @@ while True:
     choice = input("Enter your choice(1 to 5): ")
 
     if choice == 1:
-            hourly_bikes.show_inventory()
-            daily_bikes.show_inventory()
-            weekly_bikes.show_inventory()
+            hourly.show_inventory()
+            daily.show_inventory()
+            weekly.show_inventory()
 
     elif choice == 2:
             shop.rent_bike()
